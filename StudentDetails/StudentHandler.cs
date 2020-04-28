@@ -65,10 +65,7 @@ namespace StudentDetails
                     checkNum = true;
                 }
             }
-            while (checkNum ==true);
-        
-       
-
+            while (checkNum == true);
         }
         public void start()
         {
@@ -84,9 +81,6 @@ namespace StudentDetails
                 Console.WriteLine("Please select the above menu");
 
                 menu = int.Parse(Console.ReadLine());
-
-
-
                 switch (menu)
                 {
                     case 1:
@@ -113,7 +107,6 @@ namespace StudentDetails
                         Console.Clear();
                         Console.WriteLine("Return");
                         break;
-
                 }
             }
             while (menu != 5);
@@ -121,19 +114,15 @@ namespace StudentDetails
             {
                 System.Environment.Exit(0);
             }
-
         }
-
-
-
-        private  void AddStudent()
+        private void AddStudent()
         {
-            
             try
             {
                 Student student = new Student();
                 student.Id = 0;
-                do {
+                do
+                {
                     Console.WriteLine("Student Id:");
                     int enteredId = int.Parse(Console.ReadLine());
                     var repeatedId = StudentList.Find(s => s.Id == enteredId);
@@ -146,7 +135,7 @@ namespace StudentDetails
                         student.Id = enteredId;
                     }
                 }
-                while (student.Id == 0 );
+                while (student.Id == 0);
                 Console.WriteLine("Student Name:");
                 student.Name = Console.ReadLine();
                 do
@@ -167,10 +156,9 @@ namespace StudentDetails
             }
             Console.WriteLine();
             Exit();
-
         }
 
-        private  void FindStudent()
+        private void FindStudent()
         {
 
             Console.WriteLine("Enter the student id you wish to find");
@@ -183,9 +171,9 @@ namespace StudentDetails
                 Console.WriteLine("|{0,-5}|{1,-15}|{2,-8}|{3,-20}|", "Id", "Name", "Gender", "DOB");
                 Console.WriteLine("|{0,5}|{1,15}|{2,8}|{3,20}|", "-----", "---------------", "--------", "--------------------");
                 Console.WriteLine("|{0,-5}|{1,-15}|{2,-8}|{3,-20}|",
-                    editStudent.Id, 
-                    editStudent.Name, 
-                    editStudent.Gender, 
+                    editStudent.Id,
+                    editStudent.Name,
+                    editStudent.Gender,
                     editStudent.DOB);
             }
             else
@@ -197,7 +185,7 @@ namespace StudentDetails
 
         }
 
-        private  void ListStudent()
+        private void ListStudent()
         {
             Console.WriteLine("|{0,-5}|{1,-15}|{2,-8}|{3,-20}|", "-----", "---------------", "--------", "--------------------");
             Console.WriteLine("|{0,-5}|{1,-15}|{2,-8}|{3,-20}|", "Id", "Name", "Gender", "DOB");
@@ -209,9 +197,9 @@ namespace StudentDetails
             Console.WriteLine("|{0,5}|{1,15}|{2,8}|{3,20}|", "-----", "---------------", "--------", "--------------------");
             Console.WriteLine();
             Exit();
-            
+
         }
-        private  void DeleteStudent()
+        private void DeleteStudent()
         {
             Console.WriteLine("Enter the Student Id which you wish to delete");
             int dltStuId = int.Parse(Console.ReadLine());
@@ -228,8 +216,6 @@ namespace StudentDetails
             }
             Console.WriteLine();
             Exit();
-
-
         }
     }
 }
