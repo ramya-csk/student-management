@@ -179,10 +179,13 @@ namespace StudentDetails
             Student editStudent = StudentList.Find(s => s.Id == StuId);
             if (editStudent != null)
             {
-                Console.WriteLine("Student:{0},{1},{2},{3}",
-                    editStudent.Id,
-                    editStudent.Name,
-                    editStudent.Gender,
+                Console.WriteLine("|{0,-5}|{1,-15}|{2,-8}|{3,-20}|", "-----", "---------------", "--------", "--------------------");
+                Console.WriteLine("|{0,-5}|{1,-15}|{2,-8}|{3,-20}|", "Id", "Name", "Gender", "DOB");
+                Console.WriteLine("|{0,5}|{1,15}|{2,8}|{3,20}|", "-----", "---------------", "--------", "--------------------");
+                Console.WriteLine("|{0,-5}|{1,-15}|{2,-8}|{3,-20}|",
+                    editStudent.Id, 
+                    editStudent.Name, 
+                    editStudent.Gender, 
                     editStudent.DOB);
             }
             else
